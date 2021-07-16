@@ -1369,6 +1369,6 @@ contract Comptroller is ComptrollerV4Storage, ComptrollerInterface, ComptrollerE
      * @return The address of LHB
      */
     function getCompAddress() public view returns (address) {
-        return 0x8F67854497218043E1f72908FFE38D0Ed7F24721;
+        return 0xF77ef720573F58e6F2A65Cc9AB34D77cDeDBc0d3;
     }
 }
