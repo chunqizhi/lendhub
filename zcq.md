@@ -35,3 +35,59 @@ uint baseRatePerYear, uint multiplierPerYear
 
 LErc20Delegate  
 0xE81383504a4187e0f348195e6c93a2fC82441e36
+
+===
+第一步：部署项目代币  
+LHB: 0xF77ef720573F58e6F2A65Cc9AB34D77cDeDBc0d3  
+
+第二步：部署价格预约机  
+simplePriceOracle: 0x3CE993A33c6be3CF819e1DF26E15896aEfea3a42  
+
+第三步：部署 Comptroller  
+comptroller: 0x32a5C6C6c9b1d7faCD3bdAcD961DF9924BAaaea8
+
+第四步：部署 Unitroller  
+unitroller: 0xe530e041a81D840Cb3d431Dff9C0bbB9a4B6f2aE  
+
+调用 Unitroller 合约的 _setPendingImplementation 函数设置实现地址  
+
+调用 Comptroller 合约的 _become 函数接受 Unitroller  
+
+第五步：部署 InterestRateModel  
+20000000000000000,150000000000000000  
+interestRateModel: 0x0d6Ee76c058DA354a3d9b86a1d858b4560Cd7576  
+
+第六步：部署 CToken
+
+部署 CErc20Delegate  
+CErc20Delegate: 0x743e3Ef117C9f991b403055428177524F1F6e6DD
+
+部署 cUSDT （CErc20Delegator）  
+0x7acF34e1366223ca6C70a86470c3a6fA96ae6236,0xe530e041a81D840Cb3d431Dff9C0bbB9a4B6f2aE,0x0d6Ee76c058DA354a3d9b86a1d858b4560Cd7576,1000000000000000000,Compound USDT Token,cUSDT,18,0x1F06A0E4aCEB2378b7F8c97c0a90048407671Cc8,0x743e3Ef117C9f991b403055428177524F1F6e6DD,0x
+CErc20Delegator: 0x5D11a44D740B953de56Fe959b1BbFe7CA223d10b
+
+第七步：添加市场（unitroller）  
+_supportMarket()  
+0x5D11a44D740B953de56Fe959b1BbFe7CA223d10b  
+
+第八步：在 usdt 合约中授权 cUSDT 合约地址  
+0x5D11a44D740B953de56Fe959b1BbFe7CA223d10b,100000000000000000000000
+
+第九步：存入资产（CErc20Delegator）  
+mint()  
+10000000000000000000
+
+第十步：取回资产（CErc20Delegator）  
+redeem()  
+10000000000000000000
+
+第一步：部署常用代币  
+wht: 
+
+0x1F06A0E4aCEB2378b7F8c97c0a90048407671Cc8,0x1F06A0E4aCEB2378b7F8c97c0a90048407671Cc8,USDT TEST,USDT,18  
+usdt: 0x7acF34e1366223ca6C70a86470c3a6fA96ae6236
+
+mint()  
+0x1F06A0E4aCEB2378b7F8c97c0a90048407671Cc8,100000000000000000000000  
+
+dai: 
