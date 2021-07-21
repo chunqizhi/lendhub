@@ -110,6 +110,11 @@ _setCloseFactor()
 _setLiquidationIncentive()  
 1080000000000000000  
 
+cUSDT
+设置 目前利息的一部分作为准备金  
+_setReserveFactor()  
+120000000000000000  
+
 第一步：部署常用代币  
 wht: 
 
