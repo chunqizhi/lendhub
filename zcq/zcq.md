@@ -90,6 +90,10 @@ redeem()
 setUnderlyingPrice()  
 0x3e06498E21C2980621E746Da4889475AA12E8d41,1000000
 
+第十二步：添加 cUSDT 挖矿 lhb  
+_addCompMarkets()  
+0x3e06498E21C2980621E746Da4889475AA12E8d41  
+
 第一步：部署常用代币  
 wht: 
 
