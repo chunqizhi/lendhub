@@ -51,6 +51,24 @@ comptroller: 0xc889e87f348F34c562f412E90023b56F1911a7A5
 第四步：部署 Unitroller  
 unitroller: 0xe7B2Caf0cE6Af1522652E1dAD7252d7C6004fF71  
 
+comp
+在清算一笔借款时，用来计算最大偿还金额的乘数  
+closeFactorMantissa  
+500000000000000000  
+500000000000000000  
+
+comp
+表示清算人所收到的抵押折扣的乘数  
+liquidationIncentiveMantissa  
+1080000000000000000  
+1080000000000000000  
+
+comp
+飞轮分配每块LHB的速率  
+compRate  
+6800000000000000000  
+176000000000000000
+
 调用 Unitroller 合约的 _setPendingImplementation 函数设置实现地址  
 0xc889e87f348F34c562f412E90023b56F1911a7A5
 
@@ -140,16 +158,6 @@ bat: 0xF605C9ae2B111fB7aA8B15E2470133AC2424D90b
 mint()  
 0x1F06A0E4aCEB2378b7F8c97c0a90048407671Cc8,100000000000000000000000  
 
-在清算一笔借款时，用来计算最大偿还金额的乘数  
-closeFactorMantissa  
-500000000000000000  
-500000000000000000  
-
-表示清算人所收到的抵押折扣的乘数  
-liquidationIncentiveMantissa  
-1080000000000000000  
-1080000000000000000  
-
 单个帐户可参与的最大资产数量(借入或用作抵押)  
 maxAssets  
 0  
@@ -160,11 +168,6 @@ maxAssets
 例如，0.9允许借款抵押品价值的90%。  
 必须在0和1之间，并存储为尾数。  
 collateralFactorMantissa
-
-飞轮分配每块LHB的速率  
-compRate  
-6800000000000000000  
-176000000000000000
 
 飞轮传递LHB的阈值，为魏  
 compClaimThreshold  
